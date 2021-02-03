@@ -1,0 +1,106 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Topico;
+use Illuminate\Http\Request;
+use App\Http\Controllers\ApiControllerTrait;
+
+class TopicoController extends Controller
+{
+
+    use ApiControllerTrait;
+
+    protected $model;
+    protected $rules = [
+        'titulo' => 'required|min:3',
+        'corpo' => 'required|min:3',
+    ];
+  
+    protected $messages = [
+        'required' => ':attribute é obrigatório',
+        'min' => ':attribute precisa de pelo menos :min caracteres'
+    ];
+  
+    public function __construct(Topico $model)
+    {
+      $this->model = $model;
+    }
+  
+
+    // /**
+    //  * Display a listing of the resource.
+    //  *
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function index()
+    // {
+    //     //
+    // }
+
+    // /**
+    //  * Show the form for creating a new resource.
+    //  *
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function create()
+    // {
+    //     //
+    // }
+
+    // /**
+    //  * Store a newly created resource in storage.
+    //  *
+    //  * @param  \Illuminate\Http\Request  $request
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function store(Request $request)
+    // {
+    //     //
+    // }
+
+    // /**
+    //  * Display the specified resource.
+    //  *
+    //  * @param  \App\Models\Topico  $topico
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function show(Topico $topico)
+    // {
+    //     //
+    // }
+
+    // /**
+    //  * Show the form for editing the specified resource.
+    //  *
+    //  * @param  \App\Models\Topico  $topico
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function edit(Topico $topico)
+    // {
+    //     //
+    // }
+
+    // /**
+    //  * Update the specified resource in storage.
+    //  *
+    //  * @param  \Illuminate\Http\Request  $request
+    //  * @param  \App\Models\Topico  $topico
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function update(Request $request, Topico $topico)
+    // {
+    //     //
+    // }
+
+    // /**
+    //  * Remove the specified resource from storage.
+    //  *
+    //  * @param  \App\Models\Topico  $topico
+    //  * @return \Illuminate\Http\Response
+    //  */
+    // public function destroy(Topico $topico)
+    // {
+    //     //
+    // }
+}
